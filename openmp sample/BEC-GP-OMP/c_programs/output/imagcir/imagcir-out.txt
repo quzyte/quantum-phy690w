@@ -1,0 +1,23 @@
+ Imaginary time propagation circularly-symmetric trap,   OPTION = 2
+
+  Number of Atoms N = 200, Unit of length AHO = 0.00000100 m
+  Scattering length a = -47.30*a0
+  Nonlinearity G_3D = -6.2908850
+  Nonlinearity G_2D = -2.5097000
+  Axial trap parameter = 1.00
+
+ # Space Stp: NR = 2000
+  Space Step: DR = 0.0025
+ # Time Stp : NSTP = 0, NPAS = 200000, NRUN = 200000
+   Time Step:   DT = 0.000020
+
+                  --------------------------------------------------------
+                    Norm       Chem       Ener/N      <rms>    |Psi(0)|^2
+                  --------------------------------------------------------
+Initial :          1.0000    1.000000    1.000000    1.00000    0.31831
+After NPAS iter.:  1.0000    0.499772    0.770107    0.87758    0.45609
+After NRUN iter.:  1.0000    0.499772    0.770107    0.87758    0.45609
+                  --------------------------------------------------------
+
+ Clock Time: 21 seconds
+ CPU Time:  21 seconds

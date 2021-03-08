@@ -1,0 +1,21 @@
+ Imaginary time propagation axially-symmetric trap,   OPTION = 2
+
+  Number of Atoms N = 400, Unit of length AHO = 0.00000100 m
+  Scattering length a = 70.72*a0
+  Nonlinearity G_3D = 18.8100000
+  Parameters of trap: NU = 1.00, LAMBDA = 4.00
+ # Space Stp: NRHO = 300, NZ = 300
+  Space Step: DRHO = 0.0200, DZ = 0.0200
+ # Time Stp : NSTP = 0, NPAS = 100000, NRUN = 20000
+   Time Step:   DT = 0.000040
+
+                  --------------------------------------------------------
+                    Norm      Chem        Ener/N     <r>     |Psi(0,0)|^2
+                  --------------------------------------------------------
+Initial :          1.0000     3.00000     3.00000    1.06066    0.35860
+After NPAS iter.:  0.9997     4.36113     3.78228    1.37846    0.14538
+After NRUN iter.:  0.9997     4.36113     3.78228    1.37846    0.14538
+                  --------------------------------------------------------
+
+ Clock Time: 499 seconds
+ CPU Time: 499 seconds

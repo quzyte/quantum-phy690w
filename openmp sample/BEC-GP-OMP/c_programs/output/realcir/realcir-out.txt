@@ -1,0 +1,25 @@
+ Real time propagation circularly-symmetric trap,   OPTION = 2
+
+  Number of Atoms N = 400, Unit of length AHO = 0.00000100 m
+  Scattering length a = 118.25*a0
+  Nonlinearity G_3D = 31.4541743
+  Nonlinearity G_2D = 12.5484000
+  Axial trap parameter = 1.00
+
+ # Space Stp: NR = 2000
+  Space Step: DR = 0.0100
+ # Time Stp : NSTP = 1000000, NPAS = 100, NRUN = 40000
+   Time Step:   DT = 0.000100
+
+ * Change for dynamics: GPAR = 0.500 *
+
+                  --------------------------------------------------------
+                    Norm       Chem       Ener/N      <rms>    |Psi(0)|^2
+                  --------------------------------------------------------
+Initial :          1.0000      1.0000      1.0000      1.000      0.318
+After NSTP iter.:  1.0000      2.2549      1.7079      1.308      0.153
+After NPAS iter.:  1.0000      2.2548      1.7079      1.308      0.153
+After NRUN iter.:  1.0000      1.8331      1.4305      1.081      0.231
+                  --------------------------------------------------------
+ Clock Time: 182 seconds
+ CPU Time: 182 seconds

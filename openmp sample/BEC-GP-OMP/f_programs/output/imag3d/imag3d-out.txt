@@ -1,0 +1,22 @@
+ Imaginary time propagation 3D, OPTION =  2
+ 
+  Number of Atoms N =      1000, Unit of length AHO =  0.00000100 m
+  Scattering length a =     67.53*a0
+  Nonlinearity G_3D =      44.9069998
+  Parameters of trap: GAMMA = 1.0000, NU = 1.4142, LAMBDA = 2.0000
+ 
+ # Space Stp: NX =      240, NY =      200, NZ =      160
+  Space Step: DX =   0.050000, DY =   0.050000, DZ =   0.050000
+ # Time Stp : NSTP =         0, NPAS =      5000, NRUN =       500
+   Time Step:   DT =   0.000400
+ 
+                   -----------------------------------------------------
+                    Norm      Chem        Ener/N     <r>     |Psi(0,0,0)|^2
+                   -----------------------------------------------------
+Initial :          1.0000     2.20710     2.20710    1.05050    0.30203
+After NPAS iter.:  0.9965     4.34463     3.48623    1.45834    0.08339
+After NRUN iter.:  0.9965     4.34462     3.48623    1.45835    0.08339
+                   -----------------------------------------------------
+ 
+ Clock Time:    1682 seconds
+   CPU Time:    1682 seconds

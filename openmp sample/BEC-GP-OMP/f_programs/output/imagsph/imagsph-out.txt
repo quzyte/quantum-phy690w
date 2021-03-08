@@ -1,0 +1,21 @@
+ Imaginary time propagation spherically-symmetric trap,   OPTION =   2
+ 
+  Number of Atoms N =      2000, Unit of length AHO =  0.00000100 m
+  Scattering length a =     94.35*a0
+  Nonlinearity G =      125.4840001
+ 
+ # Space Stp:  N =     3000
+  Space Step: DX =   0.002500
+ # Time Stp : NSTP =         0, NPAS =    200000, NRUN =     20000
+   Time Step:   DT =   0.000020
+ 
+                   -----------------------------------------------------
+                    Norm      Chem        Ener      <r>      |Psi(0)|^2
+                   -----------------------------------------------------
+Initial :          1.0000    1.500000    1.500000    1.22474    0.17959
+After NPAS iter.:  0.9998    4.014113    3.070781    1.88214    0.03021
+After NRUN iter.:  0.9998    4.014113    3.070781    1.88214    0.03021
+                   -----------------------------------------------------
+ 
+ Clock Time:      16 seconds
+   CPU Time:      16 seconds

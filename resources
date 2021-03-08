@@ -2,4 +2,9 @@ Resources:
 
  - https://medium.com/modern-physics/finite-difference-solution-of-the-schrodinger-equation-c49039d161a8
  
- - 
+ - Papers for sequential, openMP code in Fortran and C:
+    - http://www.sciencedirect.com/science/journal/00104655
+    - Fortran programs:             https://doi.org/10.1016/j.cpc.2009.04.015
+    - C programs:                   https://doi.org/10.1016/j.cpc.2012.03.022
+    - OpenMP Fortran, C programs:   https://doi.org/10.1016/j.cpc.2016.03.015
+ 

@@ -1,0 +1,72 @@
+# 
+# GP-SCL codes are developed by:
+# 
+# Dusan Vudragovic, Ivana Vidanovic, Antun Balaz
+# (Institute of Physics Belgrade, Serbia, http://www.scl.rs/)
+# 
+# Paulsamy Muruganandam
+# (Bharathidasan University, Tamil Nadu, India)
+# 
+# Sadhan K. Adhikari
+# (Sao Paulo State University, Brazil)
+#    
+# Public use and modification of this code are allowed provided that the
+# following papers are cited:
+# P. Muruganandam et al., Comput. Phys. Commun. 180 (2009) 1888;
+# D. Vudragovic et al., Comput. Phys. Commun. 183 (2012) 2021.
+# The authors would be grateful for all information and/or comments regarding
+# the use of the code.
+#
+
+CC = icc
+CFLAGS = -fast
+OMPFLAGS = -openmp
+LIBS = -lm
+OMPLIBS = -lpthread
+
+SERIAL_TARGETS=imagtime1d imagtime2d imagtime3d \
+               imagtimeaxial imagtimecir imagtimesph \
+               realtime1d realtime2d realtime3d \
+               realtimeaxial realtimecir realtimesph
+SERIAL_OBJECTS=$(SERIAL_TARGETS:=.o)
+
+OPENMP_TARGETS=imagtime2d-th imagtime3d-th imagtimeaxial-th \
+               realtime2d-th realtime3d-th realtimeaxial-th
+OPENMP_OBJECTS=$(OPENMP_TARGETS:=.o)
+
+UTIL_TARGETS=diffint mem cfg
+UTIL_OBJECTS=$(UTIL_TARGETS:=.o)
+
+all: $(SERIAL_TARGETS) $(OPENMP_TARGETS)
+	@rm -rf $(UTIL_OBJECTS)
+
+serial: $(SERIAL_TARGETS)
+	@rm -rf $(UTIL_OBJECTS)
+
+openmp: $(OPENMP_TARGETS)
+	@rm -rf $(UTIL_OBJECTS)
+
+help: readme.txt
+	less $^
+
+$(SERIAL_TARGETS): % : $(UTIL_OBJECTS) %.o
+	$(CC) $(CFLAGS) -o $@ $@.o $(UTIL_OBJECTS) $(LIBS)
+	@rm -rf $@.o
+
+$(OPENMP_TARGETS): % : $(UTIL_OBJECTS) %.o
+	$(CC) $(CFLAGS) $(OMPFLAGS) -o $@ $@.o $(UTIL_OBJECTS) $(LIBS) $(OMPLIBS)
+	@rm -rf $@.o
+
+$(SERIAL_OBJECTS): %.o:
+	$(CC) $(CFLAGS) -c src/$*/$*.c -o $@
+
+$(OPENMP_OBJECTS): %.o:
+	$(CC) $(CFLAGS) $(OMPFLAGS) -c src/$*/$*.c -o $@
+
+$(UTIL_OBJECTS): %.o:
+	$(CC) $(CFLAGS) -c src/util/$*.c -o $@
+
+clean:
+	@rm -rf $(SERIAL_TARGETS) $(OPENMP_TARGETS) \
+           $(SERIAL_OBJECTS) $(OPENMP_OBJECTS) \
+           $(UTIL_OBJECTS)

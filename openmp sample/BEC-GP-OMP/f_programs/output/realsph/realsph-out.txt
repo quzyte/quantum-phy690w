@@ -1,0 +1,24 @@
+ Real time propagation spherically-symmetric trap,   OPTION =   2
+ 
+  Number of Atoms N =      2000, Unit of length AHO =  0.00000100 m
+  Scattering length a =   94.351186*a0
+  Nonlinearity G =       125.484000
+ 
+ # Space Stp:  N =     2000
+  Space Step: DX =   0.010000
+ # Time Stp : NSTP =   1000000, NPAS =       100, NRUN =     40000
+   Time Step:   DT =   0.000100
+ 
+ * Change for dynamics: GPAR =       0.500 *
+ 
+                   -----------------------------------------------------
+                    Norm      Chem        Ener/N      <r>      |Psi(0)|^2
+                   -----------------------------------------------------
+Initial :             1.0000      1.5000      1.5000      1.225      0.180
+After NSTP iter.:     1.0000      4.0155      3.0708      1.881      0.030
+After NPAS iter.:     1.0000      4.0151      3.0708      1.882      0.030
+After NRUN iter.:     1.0000      3.1504      2.5225      1.711      0.040
+                   -----------------------------------------------------
+ 
+ Clock Time:     119 seconds
+   CPU Time:     119 seconds

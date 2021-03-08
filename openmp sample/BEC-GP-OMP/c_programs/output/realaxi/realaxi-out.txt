@@ -1,0 +1,24 @@
+ Real time propagation axially-symmetric trap,   OPTION = 2
+
+  Number of Atoms N = 400, Unit of length AHO = 0.00000100 m
+  Scattering length a = 70.72*a0
+  Nonlinearity G_3D = 18.8100000
+  Parameters of trap: NU = 1.00, LAMBDA = 4.00
+ # Space Stp: NRHO = 130, NZ = 130
+  Space Step: DRHO = 0.1000, DZ = 0.1000
+ # Time Stp : NSTP = 100000, NPAS = 1000, NRUN = 20000
+   Time Step:   DT = 0.001000
+
+ * Change for dynamics: GPAR = 0.500 *
+
+                  --------------------------------------------------------
+                    Norm      Chem        Ener/N     <r>     |Psi(0,0)|^2
+                  --------------------------------------------------------
+Initial :          1.0000       3.000       3.000      1.061      0.345
+After NSTP iter.:  0.9992       4.362       3.782      1.377      0.141
+After NPAS iter.:  1.0000       4.362       3.782      1.380      0.141
+After NRUN iter.:  1.0001       3.907       3.473      1.189      0.232
+                  --------------------------------------------------------
+
+ Clock Time: 237 seconds
+ CPU Time: 237 seconds

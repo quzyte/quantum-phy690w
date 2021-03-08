@@ -1,0 +1,252 @@
+# 
+# GP-SCL codes are developed by:
+# 
+# Dusan Vudragovic, Ivana Vidanovic, Antun Balaz
+# (Institute of Physics Belgrade, Serbia, http://www.scl.rs/)
+# 
+# Paulsamy Muruganandam
+# (Bharathidasan University, Tamil Nadu, India)
+# 
+# Sadhan K. Adhikari
+# (Sao Paulo State University, Brazil)
+#    
+# Public use and modification of this code are allowed provided that the
+# following papers are cited:
+# P. Muruganandam et al., Comput. Phys. Commun. 180 (2009) 1888;
+# D. Vudragovic et al., Comput. Phys. Commun. 183 (2012) 2021.
+# The authors would be grateful for all information and/or comments regarding
+# the use of the code.
+#
+
+# Parameter input file for solving the time-(in)dependent Gross–Pitaevskii
+# nonlinear partial differential equation in a trap using split-step
+# Crank-Nicolson method.
+
+# Type of rescaling of Gross–Pitaevskii equation.
+# Possible values: 1, 2, and 3.
+# Required: in all codes
+# Type: int
+  OPTION = 2
+
+# Coefficient of the nonlinear term (achieved in the first NSTP iterations in
+# real-time codes).
+# Required: in all codes 
+# Type: double
+  G0 = 44.907
+
+# Coefficient that multiplies nonlinear term in non-stationary problem during
+# final NRUN iterations.
+# Required: in the following codes
+#           realtime1d, realtime2d, realtime3d,
+#           realtimecir, realtimesph, realtimeaxial
+# Type: double
+  GPAR = 0.5
+
+# Number of discretization points in the x-direction.
+# Required: in the following codes
+#           imagtime1d, realtime1d,
+#           imagtime2d, realtime2d,
+#           imagtime3d, realtime3d
+# Type: long
+  NX = 240
+
+# Number of discretization points in the y-direction.
+# Required: in the following codes
+#           imagtime2d, realtime2d,
+#           imagtime3d, realtime3d
+# Type: long
+  NY = 200
+
+# Number of discretization points in the z-direction.
+# Required: in the following codes
+#           imagtime3d, realtime3d
+#           imagtimeaxial, realtimeaxial
+# Type: long
+  NZ = 160
+
+# Number of discretization points in the r-direction.
+# Required: in the following codes
+#           imagtimecir, realtimecir,
+#           imagtimesph, realtimesph
+# Type: long
+  NR = 2000
+
+# Number of discretization points in the rho-direction.
+# Required: in the following codes
+#           imagtimeaxial, realtimeaxial
+# Type: long
+  NRHO = 500
+
+# Spatial discretization step in the x-direction.
+# Required: in the following codes
+#           imagtime1d, realtime1d,
+#           imagtime2d, realtime2d,
+#           imagtime3d, realtime3d
+# Type: double
+  DX = 0.05
+
+# Spatial discretization step in the y-direction.
+# Required: in the following codes
+#           imagtime2d, realtime2d,
+#           imagtime3d, realtime3d
+# Type: double
+  DY = 0.05
+
+# Spatial discretization step in the z-direction.
+# Required: in the following codes
+#           imagtime3d, realtime3d
+#           imagtimeaxial, realtimeaxial
+# Type: double
+  DZ = 0.05
+
+# Spatial discretization step in the r-direction.
+# Required: in the following codes
+#           imagtimecir, realtimecir,
+#           imagtimesph, realtimesph
+# Type: double
+  DR = 0.0025
+
+# Spatial discretization step in the rho-direction.
+# Required: in the following codes
+#           imagtimeaxial, realtimeaxial
+# Type: double
+  DRHO = 0.02
+
+# Time discretization step.
+# Required: in all codes
+# Type: double
+  DT = 0.0004
+
+# Kappa coefficient of anisotropy of the trap (omega_y / omega_x).
+# Required: in the following codes
+#           imagtime2d, realtime2d
+#           imagtime3d, realtime3d
+#           imagtimeaxial, realtimeaxial
+# Type: double
+  AL = 1.4142135623731
+
+# Lambda coefficient of anisotropy of the trap (omega_z / omega_x).
+# Required: in the following codes
+#           imagtime3d, realtime3d
+#           imagtimeaxial, realtimeaxial
+# Type: double
+  BL = 2.0
+
+# Number of iterations to introduce the nonlinearity G0.
+# Required: in the following codes
+#           realtime1d, realtime2d, realtime3d,
+#           realtimecir, realtimesph, realtimeaxial
+# Type: long
+  NSTP = 1
+
+# Number of subsequent iterations with fixed nonlinearity G0.
+# Required: in all codes
+# Type: long
+  NPAS = 1
+
+# Number of final iterations with fixed nonlinearity (G0 in imaginary-time
+# codes; GPAR * G0 in real-time codes).
+# Required: in all codes
+# Type: long
+  NRUN = 1
+
+# Output file with the summary of final values of all physical quantities. If
+# not defined, standard output will be used.
+# Required: no, but can be used in all codes
+# Type: string
+  OUTPUT = output
+
+# Output file with the initial wave function. In 3D case, only 1D sections along
+# coordinate axes of the wave function are saved, which is designated by a 
+# suffix x, y, or z. If not defined, the initial wave function will not be 
+# saved.
+# Required: no, but can be used in all codes
+# Type: string
+  INITOUT = initout
+
+# Output file with the wave function obtained after the first NSTP iterations, 
+# which introduce nonlinearity G0. In 3D case, only 1D sections along 
+# coordinate axes of the wave function are saved, which is designated by a 
+# suffix x, y, or z. If not defined, the wave function will not be saved.
+# Required: no, but can be used in the following codes
+#           realtime1d, realtime2d, realtime3d,
+#           realtimecir, realtimesph, realtimeaxial
+# Type: string
+  NSTPOUT = nstpout
+
+# Output file with the wave function obtained after the subsequent NPAS
+# iterations, with the fixed nonlinearity G0. In 3D case, only 1D sections along
+# coordinate axes of the wave function are saved, which is designated by a 
+# suffix x, y, or z. If not defined, the wave function will not be saved.
+# Required: no, but can be used in all codes
+# Type: string
+  NPASOUT = npasout
+    
+# Output file with the final wave function obtained after the final NRUN
+# iterations. In 3D case, only 1D sections along coordinate axes of the wave
+# function are saved, which is designated by a suffix x, y, or z. If not 
+# defined, the wave function will not be saved.
+# Required: no, but can be used in all codes
+# Type: string
+  NRUNOUT = nrunout
+
+# Output file with the time dependence of RMS during the final NRUN iterations
+# in real-time codes. If not defined, RMS values will not be saved.
+# Required: no, but can be used in the following codes
+#           realtime1d, realtime2d, realtime3d,
+#           realtimecir, realtimesph, realtimeaxial
+# Type: string
+  RMSOUT = rmsout
+
+# Discretization step in the x-direction used to save wave functions. Required
+# if any of wave function output files (INITOUT, NSTPOUT, NPASOUT, NRUNOUT) is
+# defined.
+# Required: conditionally in the following codes
+#           imagtime1d, realtime1d
+#           imagtime2d, realtime2d
+#           imagtime3d, realtime3d
+# Type: long
+  OUTSTPX = 1
+
+# Discretization step in the y-direction used to save wave functions. Required
+# if any of wave function output files (INITOUT, NSTPOUT,NPASOUT, NRUNOUT) is
+# defined.
+# Required: conditionally in the following codes
+#           imagtime2d, realtime2d
+#           imagtime3d, realtime3d
+# Type: long
+  OUTSTPY = 1
+
+# Discretization step in the z-direction used to save wave functions. Required
+# if any of wave function output files (INITOUT, NSTPOUT, NPASOUT, NRUNOUT) is
+# defined.
+# Required: conditionally in the following codes
+#           imagtime3d, realtime3d
+#           imagtimeaxial, realtimeaxial
+# Type: long
+  OUTSTPZ = 1
+
+
+# Discretization step in the r-direction used to save wave functions. Required
+# if any of wave function output files (INITOUT, NSTPOUT, NPASOUT, NRUNOUT) is
+# defined.
+# Required: conditionally in the following codes
+#           imagtimecir, realtimecir,
+#           imagtimesph, realtimesph
+# Type: long
+  OUTSTPR = 1
+
+# Discretization step in the rho-direction used to save wave functions. Required
+# if any of wave function output files (INITOUT, NPASOUT, NRUNOUT) is defined.
+# Required: conditionally in the following codes
+#           imagtimeaxial, realtimeaxial
+# Type: long
+  OUTSTPRHO = 1
+
+# Time discretization step used to save RMS of the wave function. Required if
+# RMSOUT is defined.
+# Required: conditionally in the following codes
+#           realtime1d, realtime2d, realtime3d,
+#           realtimecir, realtimesph, realtimeaxial
+# Type: long
+  OUTSTPT = 1

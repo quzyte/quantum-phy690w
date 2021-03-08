@@ -1,0 +1,26 @@
+ Real time propagation 1d,   OPTION = 2
+
+  Number of Atoms N = 2000, Unit of length AHO = 0.00000100 m
+  Scattering length a = 74.10*a0
+  Nonlinearity G_3D = 98.5549032
+  Nonlinearity G_1D = 62.7420000
+  Parameter of trap: GAMMA = 1.00
+  Radial Gaussian Width = 0.50
+
+ # Space Stp:  N = 3000
+  Space Step: DX = 0.010000
+ # Time Stp : NSTP = 1000000, NPAS = 100, NRUN = 40000
+   Time Step:   DT = 0.000100
+
+ * Change for dynamics: GPAR = 0.500 *
+
+                  --------------------------------------------------------
+                    Norm      Chem        Ener/N      <x>      |Psi(0)|^2
+                  --------------------------------------------------------
+Initial :          1.0000      0.5000      0.5000      0.707      0.564
+After NSTP iter.:  1.0000     10.3680      6.2570      2.050      0.165
+After NPAS iter.:  1.0000     10.3687      6.2570      2.050      0.165
+After NRUN iter.:  1.0000      6.4248      3.9949      1.735      0.194
+                  --------------------------------------------------------
+ Clock Time: 304 seconds
+ CPU Time: 304 seconds
