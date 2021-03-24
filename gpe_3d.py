@@ -37,7 +37,7 @@ def H3(temppsi):
     return(solve(mat('z'),r))
 
 def initfunc():
-    return 2/l*np.sin(np.pi*xv/l)*np.sin(np.pi*yv/l)#*np.sin(np.pi*zv/l);
+    return 2/l*np.sin(np.pi*xv/l)*np.sin(np.pi*yv/l)*np.sin(np.pi*zv/l);
 
 c=complex(0,1)#complex number
 l=6 #length of infinite square well
