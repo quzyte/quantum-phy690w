@@ -60,7 +60,7 @@ def V(x, y, z):
 	return potential
 
 # Computes the evolution of Psi with respect to t.
-def evolve(nx, ny, nz, m, x, y, z, t, N, skip):
+def evolve(nx, ny, nz, m, N, skip):
 	# x, y, z, t arrays. We're using x, y, z arrays from -1 to +1 because we are using quadratic potential,
 	x = np.linspace(-1, 1, nx)
 	y = np.linspace(-1, 1, ny)
@@ -172,7 +172,7 @@ indices = skip*np.linspace(0, len(integral) - 1, len(integral), dtype = np.int)
 t_arr = t[indices]
 
 # Function which computes evolution
-evolve(nx, ny, nz, m, x, y, z, t, N, skip)
+evolve(nx, ny, nz, m, N, skip)
 
 # Plotting integral vs t. Uncomment this section if you are computing the integral inside evolve function.
 '''
