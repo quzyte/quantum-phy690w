@@ -60,7 +60,7 @@ def V(x, y, z):
 	return potential
 
 # Computes the evolution of Psi with respect to t.
-def evolve(nx, ny, nz, m, N, skip):
+def evolve(nx, ny, nz, m, dt, N, skip):
 	# x, y, z, t arrays. We're using x, y, z arrays from -1 to +1 because we are using quadratic potential,
 	x = np.linspace(-1, 1, nx)
 	y = np.linspace(-1, 1, ny)
@@ -128,7 +128,7 @@ def evolve(nx, ny, nz, m, N, skip):
 			'''
 
 			# var0 computes the part of the Hamiltonian containing potential and non-linear term.
-			var0 = ((potential_gpu + N*np.abs(Psi_gpu)**2)*Psi_gpu)[1:nx-1, 1:ny-1, 1:nz-1]
+			var0 = ((potential_gpu + N*cp.abs(Psi_gpu)**2)*Psi_gpu)[1:nx-1, 1:ny-1, 1:nz-1]
 
 			# var1 computes part of the potential containg second order derivatie along x.
 			var1 = (Psi_gpu[2:nx, 1:ny-1, 1:nz-1] - 2*Psi_gpu[1:nx-1, 1:ny-1, 1:nz-1] + Psi_gpu[0:nx-2, 1:ny-1, 1:nz-1])/dx**2
@@ -173,7 +173,7 @@ t = np.linspace(0, (m-1)*dt, m)
 t_arr = t[indices]
 
 # Function which computes evolution
-evolve(nx, ny, nz, m, N, skip)
+evolve(nx, ny, nz, m, dt, N, skip)
 
 # Plotting integral vs t. Uncomment this section if you are computing the integral inside evolve function.
 '''
