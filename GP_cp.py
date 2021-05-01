@@ -169,6 +169,7 @@ skip = int(np.floor((m - 1)/no_of_frames))
 # Array to compute integral of |\Psi|^2
 integral = np.zeros(int(np.floor(m/skip) + 1))
 indices = skip*np.linspace(0, len(integral) - 1, len(integral), dtype = np.int)
+t = np.linspace(0, (m-1)*dt, m)
 t_arr = t[indices]
 
 # Function which computes evolution
